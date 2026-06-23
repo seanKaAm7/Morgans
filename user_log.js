@@ -194,3 +194,45 @@ AI가 진짜 iPhone 전화처럼 먼저 오는 UX는 v2에서 CallKit + PushKit 
  * 작업: 프로젝트가 아직 계획 단계임을 확인하고, 향후 커밋/푸시 요청 시 사용할 GitHub 원격 저장소 URL을 참고 정보로 기록함.
 -----------------------------------------
 */
+/*
+-----------------------------------------
+[Log #5] [2026-06-23 10:48:20]
+ * 사용자: 계획에서 말투에 대한내용은 다 없애. 거기서 설정에서 글을 기록해서 말투를  수정할 수 있는기능이 필요해
+ * 작업: 고정 말투 옵션과 manager_tone 기반 설계를 제거하고, 설정에서 사용자가 직접 응답 스타일 지침을 기록해 AI의 말하는 방식을 조정하는 구조로 기획서를 수정함.
+-----------------------------------------
+*/
+/*
+-----------------------------------------
+[Log #6] [2026-06-23 11:20:56]
+ * 사용자: 아래 그대로 복붙하면 됨. 미정 항목 업데이트 내용을 기준으로 최종 음성 구조를 Fish Speech / S2 Pro GPU 서버 기반 실시간 음성 구조로 확정하고, 기본 매니저 3명, CallKit + PushKit 단계, 응답 스타일 직접 입력, 기억 기능 범위, 불필요한 개발 일정/최종 MVP/선택지/중복 내용을 정리해 달라고 요청함.
+ * 작업: 기존 상세 계획서를 중복 없는 v3 구조로 재작성하고, Fish Speech / S2 Pro 서버, 실시간 STT/TTS, barge-in, 기본 매니저 3명 seed, Figma 전 화면 흐름, CallKit/PushKit 조건, 응답 스타일 직접 입력, 사용자 정보/스케줄 중심 기억 구조를 반영함.
+-----------------------------------------
+*/
+/*
+-----------------------------------------
+[Log #7] [2026-06-23 11:26:40]
+ * 사용자: 지금 md보고 필요없는 내용 있음 정리하고 수정할 사항 ㅣㅇㅆ으면 수정해.내가 몇개 지웠거든? 개발 일정이나 뭐 그런거
+ * 작업: 현재 계획서를 검토해 개발 일정 성격의 구현 단계 섹션을 제거하고, 존재하지 않는 routines 테이블을 참조하던 routine_calls 구조를 user_schedule_items 기반으로 수정함.
+-----------------------------------------
+*/
+/*
+-----------------------------------------
+[Log #8] [2026-06-23 11:31:17]
+ * 사용자: 1번부터 24번까지 옜날 내용있으면 수정해
+ * 작업: 계획서에 남아 있던 예전 1~24번 구조와 오래된 기술/DB/API 내용을 제거하고, Fish Speech / S2 Pro 실시간 음성 구조와 call_sessions 기반 최신 설계로 재정리함.
+-----------------------------------------
+*/
+/*
+-----------------------------------------
+[Log #9] [2026-06-23 13:36:00]
+ * 사용자: 아래로 교체해서 쓰면 됨. user_devices, call_sessions 상태 분리, user_schedule_items 필드 보강, memory_confirmation_requests, Fish Audio API 초기 음성 경로, direct WebSocket/HTTP와 LiveKit/WebRTC 연결 방식, voice line template과 tag variation, barge-in 상태 기록, tts_cache, Supabase RLS, API key 보안, APNs 환경 구분, iOS Audio Session, 실패 fallback, 테스트 기준과 짧은 근거를 정리해서 추가해 달라고 요청함.
+ * 작업: 계획서를 v3.1로 교체하고 Fish Audio API 초기 TTS 경로, 기기 token 저장, call_status/result_action 분리, memory confirmation, voice line/cache, 보안/RLS, Audio Session, fallback, 테스트 기준과 공식 문서 근거 링크를 반영함.
+-----------------------------------------
+*/
+/*
+-----------------------------------------
+[Log #10] [2026-06-23 13:48:57]
+ * 사용자: md좀 바꿔줄래 고칠 부분만 말하면 이거. LiveKit을 고도화가 아니라 기본 방향으로 올리고, 예약 콜 v1을 LiveKit/WebRTC room join으로 바꾸며, 직접 WebSocket/HTTP는 fallback/prototype으로 내리고, API 역할을 /voice /realtime /call-sessions로 분리하고, Fish Audio WebSocket TTS streaming, voice_line_renders와 tts_cache 역할 분리, tts_cache assistant_id, provider_usage_logs text_bytes, 근거 날짜 표현 수정을 요청함.
+ * 작업: LiveKit/WebRTC를 기본 realtime voice transport로 올리고, 직접 WebSocket/HTTP를 fallback prototype으로 정리했으며, API와 TTS/cache/usage 로그/테스트/근거 문구를 최신 결정에 맞게 수정함.
+-----------------------------------------
+*/
